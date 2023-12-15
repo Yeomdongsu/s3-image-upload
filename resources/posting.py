@@ -7,7 +7,7 @@ from mysql.connector import Error
 from datetime import datetime
 import boto3
 
-class ImageContentResource(Resource) :
+class PostingResource(Resource) :
     def post(self) :
 
         file = request.files.get("photo")
