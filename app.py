@@ -5,6 +5,7 @@ from config import Config
 from resources.posting import PostingResource  
 from resources.image import FileUploadResource
 from resources.rekognition import ObjectDetectionResource
+from resources.rekognitionFace import rekognitionFaceCompareResource, rekognitionFaceResource
 
 app = Flask(__name__)
 
@@ -18,6 +19,8 @@ api = Api(app)
 api.add_resource(FileUploadResource, "/upload")
 api.add_resource(PostingResource, "/posting")
 api.add_resource(ObjectDetectionResource, "/object_detection")
+api.add_resource(rekognitionFaceResource, "/rekogImage")
+api.add_resource(rekognitionFaceCompareResource, "/rekogImageCompare")
 
 if __name__ == "__main__" :
     app.run()

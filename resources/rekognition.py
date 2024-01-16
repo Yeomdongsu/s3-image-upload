@@ -48,10 +48,6 @@ class ObjectDetectionResource(Resource) :
         response = client.detect_labels(Image={'S3Object':{'Bucket':bucket,'Name':photo}},
         
         MaxLabels=10,
-        # Uncomment to use image properties and filtration settings
-        #Features=["GENERAL_LABELS", "IMAGE_PROPERTIES"],
-        #Settings={"GeneralLabels": {"LabelInclusionFilters":["Cat"]},
-        # "ImageProperties": {"MaxDominantColors":10}}
         )
 
         print('Detected labels for ' + photo)
