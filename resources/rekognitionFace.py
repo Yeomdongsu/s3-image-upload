@@ -123,7 +123,7 @@ class rekognitionFaceCompareResource(Resource) :
         imageSource = BytesIO(sourceFile.read())
         imageTarget = BytesIO(targetFile.read())
 
-        response = client.compare_faces(SimilarityThreshold=80, SourceImage={'Bytes': imageSource.read()}, TargetImage={'Bytes': imageTarget.read()})
+        response = client.compare_faces(SimilarityThreshold=0, SourceImage={'Bytes': imageSource.read()}, TargetImage={'Bytes': imageTarget.read()})
 
         # 이미지를 열어 얼굴 좌표를 얻어올 수 있도록 처리
         imageTarget.seek(0)
@@ -156,7 +156,7 @@ class rekognitionFaceCompareResource(Resource) :
 
             # 일치 확률을 이미지에 표시
             draw.text((left, top), f"{similarity}% confidence", fill='#ff0000')
-            
+
             # print('발견된 얼굴 위치 : ' +
             #     str(position['Left']) + ' ' +
             #     str(position['Top']) +
